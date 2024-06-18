@@ -1,67 +1,42 @@
-/**
-   @brief Some example data structures used as DDS types, which can be mapped to signals in FMI.
-*/
 module idl {
-  /**
-     My custom structure to conatin data
-     just a simple example on how the my data structure would look like
-     All the data types are basically simple c++ data types
-     boolean
-     int32
-     double
-     char
-     string
+  struct thrusterBowStruct {
+    double inputForce;
+    double inputAngle;
+  };
 
-     OBS!!!!!!!
-     For some god uknown reason 
-     char8 and char16 DONT WORK!???
-     In documentation they say it works, but parsing them causes errror, 
-     Solution: use "char" instead, no 8 or 16, just char
-     it is what it is lol...
-  */
+  struct thrusterPortStruct {
+    double inputForce;
+    double inputAngle;
+  };
+
+  struct thrusterStarboardStruct {
+    double inputForce;
+    double inputAngle;
+  };
+
+  struct hullStruct {
+    double inputWindSpeed;
+    double inputWindAngle;
+    double inputWaterCurrentSpeed;
+    double inputWaterCurrentAngle;
+    double inputWaveHeight[5];
+  };
+
   struct MyCustomSignalStructureInput {
-    uint32 fmu_output_value;
+    thrusterBowStruct thrusterBow;
+    thrusterPortStruct thrusterPort;
+    thrusterStarboardStruct thrusterStarboard;
+    hullStruct hull;
   };
+
   struct MyCustomSignalStructureOutput {
-    boolean my_state;
-    int32 my_value;
-    double my_percentage;
-    char my_letter;
-    string my_text;
-  };
-  
-  /*
-  Other Usefull data structure that we will not be using but are nice to know :)
-
-  @brief Struct to contain trigonometric values
-  struct Trigonometry {
-    double sine;   ///< Sine value
-    double cosine; ///< Cosine value
+    double outputHullPosition[6];
+    double outputAntenna1Position[3];
+    double outputAntenna2Position[3];
+    double ouputVelocitySpeed;
+    double outputVelocityAngle;
+    double outputAccelerationLinear[3];
+    double outputVelocityAngular[3];
   };
 
-  enum MyIndex { FIRST, SECOND };
-
-  @brief Struct to contain a simple signal with \@key
-  struct Signal {
-    double value;
-    @key uint16 my_key;
-    boolean is_pos;
-    MyIndex my_enum;
-  };
-
-  @brief Simple struct with both \@optional and \@key attributes
-  struct Info {
-    double number; ///< float64 value
-    @optional
-    boolean active; ///< a boolean value, which is \@optional
-    @key uint32 id; ///< unsigned int identifier, which is \@key
-  };
-
-  @brief Test structure with array data
-  struct TestData {
-    string message; ///< A string message
-    uint32 index;   ///< An unsigned integer index
-    uint32 my_matrix[5][2]; ///< 2D array of unsigned int (32bits), where row major [rows][columns], column major [columns][rows]
-  };
-  */
 };

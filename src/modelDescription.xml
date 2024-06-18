@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fmiModelDescription fmiVersion="2.0" modelName="dds-communication" description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs" author="Martynas Smilingis" copyright="DNV" license="MIT" version="0.5.1" variableNamingConvention="structured" guid="da73b22a-aa9e-5ea2-9c76-3768314258b6">
+<fmiModelDescription fmiVersion="2.0" modelName="dds-communication" description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs" author="Martynas Smilingis" copyright="DNV" license="MIT" version="0.5.1" variableNamingConvention="structured" guid="d519a0b8-1cf7-5993-90e1-640b191250bb">
 	<!-- 
         OBS!!!
         For some reason 
@@ -10,22 +10,109 @@
 	<CoSimulation modelIdentifier="dds-fmu" canHandleVariableCommunicationStepSize="true" canNotUseMemoryManagementFunctions="true"/>
 	<DefaultExperiment startTime="0" stopTime="1" tolerance="1e-3" stepSize="0.1"/>
 	<ModelVariables>
-		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.my_state" valueReference="0" variability="discrete" causality="output" initial="exact">
-			<Boolean start="false"/>
-		</ScalarVariable>
-		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.my_value" valueReference="0" variability="discrete" causality="output" initial="exact">
-			<Integer start="0"/>
-		</ScalarVariable>
-		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.my_percentage" valueReference="0" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputHullPosition[0]" valueReference="0" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.my_letter" valueReference="0" variability="discrete" causality="output" initial="exact">
-			<String start=""/>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputHullPosition[1]" valueReference="1" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.my_text" valueReference="1" variability="discrete" causality="output" initial="exact">
-			<String start=""/>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputHullPosition[2]" valueReference="2" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.fmu_output_value" valueReference="1" variability="discrete" causality="input">
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputHullPosition[3]" valueReference="3" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputHullPosition[4]" valueReference="4" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputHullPosition[5]" valueReference="5" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAntenna1Position[0]" valueReference="6" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAntenna1Position[1]" valueReference="7" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAntenna1Position[2]" valueReference="8" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAntenna2Position[0]" valueReference="9" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAntenna2Position[1]" valueReference="10" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAntenna2Position[2]" valueReference="11" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.ouputVelocitySpeed" valueReference="12" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputVelocityAngle" valueReference="13" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAccelerationLinear[0]" valueReference="14" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAccelerationLinear[1]" valueReference="15" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputAccelerationLinear[2]" valueReference="16" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputVelocityAngular[0]" valueReference="17" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputVelocityAngular[1]" valueReference="18" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="sub.MyCustomDDSFMUTopicOutput.outputVelocityAngular[2]" valueReference="19" variability="discrete" causality="output" initial="exact">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.thrusterBow.inputForce" valueReference="20" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.thrusterBow.inputAngle" valueReference="21" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.thrusterPort.inputForce" valueReference="22" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.thrusterPort.inputAngle" valueReference="23" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.thrusterStarboard.inputForce" valueReference="24" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.thrusterStarboard.inputAngle" valueReference="25" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWindSpeed" valueReference="26" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWindAngle" valueReference="27" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaterCurrentSpeed" valueReference="28" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaterCurrentAngle" valueReference="29" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[0]" valueReference="30" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[1]" valueReference="31" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[2]" valueReference="32" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[3]" valueReference="33" variability="discrete" causality="input">
+			<Real start="0.0"/>
+		</ScalarVariable>
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[4]" valueReference="34" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
 	</ModelVariables>
@@ -36,6 +123,21 @@
 			<Unknown index="3"/>
 			<Unknown index="4"/>
 			<Unknown index="5"/>
+			<Unknown index="6"/>
+			<Unknown index="7"/>
+			<Unknown index="8"/>
+			<Unknown index="9"/>
+			<Unknown index="10"/>
+			<Unknown index="11"/>
+			<Unknown index="12"/>
+			<Unknown index="13"/>
+			<Unknown index="14"/>
+			<Unknown index="15"/>
+			<Unknown index="16"/>
+			<Unknown index="17"/>
+			<Unknown index="18"/>
+			<Unknown index="19"/>
+			<Unknown index="20"/>
 		</Outputs>
 	</ModelStructure>
 </fmiModelDescription>
