@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fmiModelDescription fmiVersion="2.0" modelName="dds-communication" description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs" author="Edvard Sire" copyright="DNV" license="MIT" version="0.5.1" variableNamingConvention="structured" guid="38964d45-19b6-5eb9-bfd8-021d93a51853">
+<fmiModelDescription fmiVersion="2.0" modelName="dds-communication" description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs" author="Edvard Sire" copyright="DNV" license="MIT" version="0.5.1" variableNamingConvention="structured" guid="855b8cec-c537-5599-b466-c02518df8e4b">
 	<!-- 
         OBS!!!
         For some reason 
@@ -10,109 +10,109 @@
 	<CoSimulation modelIdentifier="dds-fmu" canHandleVariableCommunicationStepSize="true" canNotUseMemoryManagementFunctions="true"/>
 	<DefaultExperiment startTime="0" stopTime="1" tolerance="1e-3" stepSize="0.1"/>
 	<ModelVariables>
-		<ScalarVariable name="sub.DDSOutput.outputHullPosition[0]" valueReference="0" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.TBinputForce" valueReference="0" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputHullPosition[1]" valueReference="1" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.TBinputAngle" valueReference="1" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputHullPosition[2]" valueReference="2" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.TPinputForce" valueReference="2" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputHullPosition[3]" valueReference="3" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.TPinputAngle" valueReference="3" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputHullPosition[4]" valueReference="4" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.TSinputForce" valueReference="4" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputHullPosition[5]" valueReference="5" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.TSinputAngle" valueReference="5" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAntenna1Position[0]" valueReference="6" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWindSpeed" valueReference="6" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAntenna1Position[1]" valueReference="7" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWindAngle" valueReference="7" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAntenna1Position[2]" valueReference="8" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaterCurrentSpeed" valueReference="8" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAntenna2Position[0]" valueReference="9" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaterCurrentAngle" valueReference="9" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAntenna2Position[1]" valueReference="10" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaveHeight[0]" valueReference="10" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAntenna2Position[2]" valueReference="11" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaveHeight[1]" valueReference="11" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.ouputVelocitySpeed" valueReference="12" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaveHeight[2]" valueReference="12" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputVelocityAngle" valueReference="13" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaveHeight[3]" valueReference="13" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAccelerationLinear[0]" valueReference="14" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="sub.DDSInput.inputWaveHeight[4]" valueReference="14" variability="discrete" causality="output" initial="exact">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAccelerationLinear[1]" valueReference="15" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="pub.DDSOutput.outputHullPosition[0]" valueReference="15" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputAccelerationLinear[2]" valueReference="16" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="pub.DDSOutput.outputHullPosition[1]" valueReference="16" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputVelocityAngular[0]" valueReference="17" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="pub.DDSOutput.outputHullPosition[2]" valueReference="17" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputVelocityAngular[1]" valueReference="18" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="pub.DDSOutput.outputHullPosition[3]" valueReference="18" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="sub.DDSOutput.outputVelocityAngular[2]" valueReference="19" variability="discrete" causality="output" initial="exact">
+		<ScalarVariable name="pub.DDSOutput.outputHullPosition[4]" valueReference="19" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.TBinputForce" valueReference="20" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputHullPosition[5]" valueReference="20" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.TBinputAngle" valueReference="21" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAntenna1Position[0]" valueReference="21" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.TPinputForce" valueReference="22" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAntenna1Position[1]" valueReference="22" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.TPinputAngle" valueReference="23" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAntenna1Position[2]" valueReference="23" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.TSinputForce" valueReference="24" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAntenna2Position[0]" valueReference="24" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.TSinputAngle" valueReference="25" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAntenna2Position[1]" valueReference="25" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWindSpeed" valueReference="26" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAntenna2Position[2]" valueReference="26" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWindAngle" valueReference="27" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.ouputVelocitySpeed" valueReference="27" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaterCurrentSpeed" valueReference="28" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputVelocityAngle" valueReference="28" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaterCurrentAngle" valueReference="29" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAccelerationLinear[0]" valueReference="29" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaveHeight[0]" valueReference="30" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAccelerationLinear[1]" valueReference="30" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaveHeight[1]" valueReference="31" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputAccelerationLinear[2]" valueReference="31" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaveHeight[2]" valueReference="32" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputVelocityAngular[0]" valueReference="32" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaveHeight[3]" valueReference="33" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputVelocityAngular[1]" valueReference="33" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.DDSInput.inputWaveHeight[4]" valueReference="34" variability="discrete" causality="input">
+		<ScalarVariable name="pub.DDSOutput.outputVelocityAngular[2]" valueReference="34" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
 	</ModelVariables>
@@ -133,11 +133,6 @@
 			<Unknown index="13"/>
 			<Unknown index="14"/>
 			<Unknown index="15"/>
-			<Unknown index="16"/>
-			<Unknown index="17"/>
-			<Unknown index="18"/>
-			<Unknown index="19"/>
-			<Unknown index="20"/>
 		</Outputs>
 	</ModelStructure>
 </fmiModelDescription>

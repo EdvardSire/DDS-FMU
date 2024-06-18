@@ -5,6 +5,8 @@ from cyclonedds.topic import Topic
 
 from _idl._dds_fmu import DDSInput, DDSOutput
 
+import time
+
 
 
 # DDS Topic Setup (START) --------------------------------------------------
@@ -16,7 +18,7 @@ dp = DomainParticipant()
 
 # reader = DataReader(dp, Topic(dp, "DDSInput", DDSInput))
 # writer = DataWriter(dp, Topic(dp, "DDSOutput", DDSOutput))
-writer = DataWriter(dp, Topic(dp, "MyCustomDDSFMUTopicInput", DDSInput))
+writer = DataWriter(dp, Topic(dp, "DDSInput", DDSInput))
 
 
 def read_data():
@@ -44,15 +46,15 @@ def publish_data() -> None:
 
     msg = DDSInput(
             TBinputForce = 2.0,
-            TBinputAngle = 2.0,
-            TPinputForce = 2.0,
-            TPinputAngle = 2.0,
-            TSinputForce = 2.0,
-            TSinputAngle = 2.0,
-            inputWindSpeed = 2.0,
-            inputWindAngle = 2.0,
-            inputWaterCurrentSpeed = 2.0,
-            inputWaterCurrentAngle = 2.0,
+            TBinputAngle = 3.0,
+            TPinputForce = 4.0,
+            TPinputAngle = 5.0,
+            TSinputForce = 6.0,
+            TSinputAngle = 6.0,
+            inputWindSpeed = 8.0,
+            inputWindAngle = 9.0,
+            inputWaterCurrentSpeed = 10.0,
+            inputWaterCurrentAngle = 11.0,
             inputWaveHeight = 5*[3.0])
             
 
@@ -61,6 +63,7 @@ def publish_data() -> None:
 
 if __name__ == "__main__":
     while True:
+        time.sleep(0.5)
         # data = read_data()
         publish_data()
         
