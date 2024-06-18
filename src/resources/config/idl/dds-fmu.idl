@@ -19,7 +19,7 @@ module idl {
     double inputWindAngle;
     double inputWaterCurrentSpeed;
     double inputWaterCurrentAngle;
-    double inputWaveHeight[5];
+    double inputWaveHeight; // TODO [5]
   };
 
   struct MyCustomSignalStructureInput {

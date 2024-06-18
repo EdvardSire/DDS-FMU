@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fmiModelDescription fmiVersion="2.0" modelName="dds-communication" description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs" author="Martynas Smilingis" copyright="DNV" license="MIT" version="0.5.1" variableNamingConvention="structured" guid="d519a0b8-1cf7-5993-90e1-640b191250bb">
+<fmiModelDescription fmiVersion="2.0" modelName="dds-communication" description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs" author="Martynas Smilingis" copyright="DNV" license="MIT" version="0.5.1" variableNamingConvention="structured" guid="fb8c92f0-e904-5936-be77-4a06eee0911e">
 	<!-- 
         OBS!!!
         For some reason 
@@ -100,19 +100,7 @@
 		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaterCurrentAngle" valueReference="29" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
-		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[0]" valueReference="30" variability="discrete" causality="input">
-			<Real start="0.0"/>
-		</ScalarVariable>
-		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[1]" valueReference="31" variability="discrete" causality="input">
-			<Real start="0.0"/>
-		</ScalarVariable>
-		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[2]" valueReference="32" variability="discrete" causality="input">
-			<Real start="0.0"/>
-		</ScalarVariable>
-		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[3]" valueReference="33" variability="discrete" causality="input">
-			<Real start="0.0"/>
-		</ScalarVariable>
-		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight[4]" valueReference="34" variability="discrete" causality="input">
+		<ScalarVariable name="pub.MyCustomDDSFMUTopicInput.hull.inputWaveHeight" valueReference="30" variability="discrete" causality="input">
 			<Real start="0.0"/>
 		</ScalarVariable>
 	</ModelVariables>

@@ -1,28 +1,9 @@
-"""
-    NOTE: BEFORE RUNNING THIS CODE, Run the ./compile_fmu.sh to make sure you have the latest data structure the DDS-FMU is sending data with
-"""
-
-
-
-# Python Libraries
-import time
-import math
-import struct
-from dataclasses import dataclass, field, fields
-
-# DDS Libraries
-from dataclasses import dataclass
 from cyclonedds.domain import DomainParticipant
 from cyclonedds.pub import DataWriter
 from cyclonedds.sub import DataReader
 from cyclonedds.topic import Topic
-from cyclonedds.idl import IdlStruct
-from cyclonedds.util import duration
-import cyclonedds.idl.annotations as annotate
-import cyclonedds.idl.types as types
 
-# DDS-FMU Data Structure Libraries
-from _dds_fmu import MyCustomSignalStructureInput, MyCustomSignalStructureOutput
+from _idl._dds_fmu import MyCustomSignalStructureInput, MyCustomSignalStructureOutput, thrusterBowStruct, thrusterPortStruct, thrusterStarboardStruct, hullStruct
 
 
 
@@ -34,7 +15,7 @@ from _dds_fmu import MyCustomSignalStructureInput, MyCustomSignalStructureOutput
 dp = DomainParticipant()
 
 # This is Where we define topics and what type of data structure they have
-topicInput = Topic(dp, "MyCustomDDSFMUTopicInput", MyCustomSignalStructureInput)
+topicInput =  Topic(dp, "MyCustomDDSFMUTopicInput", MyCustomSignalStructureInput)
 topicOutput = Topic(dp, "MyCustomDDSFMUTopicOutput", MyCustomSignalStructureOutput)
 
 # We now finally bind these topics to DDS with correct data structure
@@ -50,6 +31,7 @@ dw = DataWriter(dp, topicOutput)
 def read_data():
     # Read value from DDS-FMU
     msg = dr.read()
+    print(msg)
 
     # Check that the message is not empty and that DDS-FMU actually published something
     if msg:
@@ -62,29 +44,31 @@ def read_data():
         return None
     
 # Function to publish data to DDS
-def publish_data(state:bool, value: int, percentage: float, letter: str, text: str) -> None:
+def publish_data() -> None:
     # Construct the message with the correct data type and values inside to publish to DDS, so that DDS FMU can receive it and output it 
-    msg = MyCustomSignalStructureOutput(
-        my_state = state,
-        my_value = value,
-        my_percentage = percentage,
-        my_letter = letter,
-        my_text = text
+    # msg = MyCustomSignalStructureOutput( outputHullPosition= 6*[1.0],
+    #     outputAntenna1Position= 3*[2.0],
+    #     outputAntenna2Position= 3*[3.0],
+    #     ouputVelocitySpeed= 4.0,
+    #     outputVelocityAngle = 5.0,
+    #     outputAccelerationLinear = 3*[6.0],
+    #     outputVelocityAngular = 3*[7.0]
+    #     )
+    msg = MyCustomSignalStructureInput(
+            thrusterBowStruct(2.0, 2.0),
+            thrusterPortStruct(2.0, 2.0),
+            thrusterStarboardStruct(2.0, 2.0),
+            hullStruct(1.0, 2.0, 3.0, 4.0, 5.0)
         )
+            
 
     # Send message to DDS for DDS-FMU to receive as an output
+
     dw.write(msg)
 # DDS Functions (STOP) --------------------------------------------------
 
 
 
-# Mail loop (START) --------------------------------------------------
-# Variables for DDS Writing
-state = True
-value = 0
-percentage = 420.69
-letter = 'W'
-text = "Hello World :D"
 
 # Variables for DDS Reading
 data = 0
@@ -96,22 +80,7 @@ waitPeriod = 0.5
 variableChanging = 0.0
 
 if __name__ == "__main__":
-    try:
-        while True:
-            # Simulate value change
-            variableChanging += 0.1
-            value = int(100 * math.sin(variableChanging))
-
-            # Communicate with DDS-FMU
-            data = read_data()
-            publish_data(state, value, percentage, letter, text)
-            
-            # Debugging
-            print(f"DATA RECEIVED: data = {data}")
-            print(f"DATA SENT    : state = {state}, value = {value}, percentage = {percentage}, letter = {letter}, text = {text}")
-            
-            # A small timeout in order to not overwhelm DDS writer and reader nodes
-            time.sleep(waitPeriod)
-    except KeyboardInterrupt:
-        print("Program interrupted by user.")
-# Mail loop (STOP) --------------------------------------------------
+    while True:
+        data = read_data()
+        publish_data()
+        
