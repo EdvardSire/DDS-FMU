@@ -22,7 +22,7 @@ import cyclonedds.idl.annotations as annotate
 import cyclonedds.idl.types as types
 
 # DDS-FMU Data Structure Libraries
-from idl.DDSFMUDataStructures import MyCustomSignalStructureInput, MyCustomSignalStructureOutput
+from _dds_fmu import MyCustomSignalStructureInput, MyCustomSignalStructureOutput
 
 
 

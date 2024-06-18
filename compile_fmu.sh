@@ -9,4 +9,4 @@ mv src/dds-fmu.fmu .
 cd src/resources/config/idl/
 idlc -l py dds-fmu.idl && cd $ROOT
 
-mv src/resources/config/idl/_idl/_dds-fmu.py dds-fmu-interface/_dds_fmu.py
+cp src/resources/config/idl/_idl/_dds-fmu.py dds-fmu-interface/_dds_fmu.py
