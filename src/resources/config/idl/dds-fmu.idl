@@ -1,4 +1,5 @@
 module idl {
+  /*
   struct thrusterBowStruct {
     double inputForce;
     double inputAngle;
@@ -21,22 +22,31 @@ module idl {
     double inputWaterCurrentAngle;
     double inputWaveHeight; // TODO [5]
   };
+  */
 
-  struct MyCustomSignalStructureInput {
-    thrusterBowStruct thrusterBow;
-    thrusterPortStruct thrusterPort;
-    thrusterStarboardStruct thrusterStarboard;
-    hullStruct hull;
+  struct DDSInput {
+    float TBinputForce;
+    float TBinputAngle;
+    float TPinputForce;
+    float TPinputAngle;
+    float TSinputForce;
+    float TSinputAngle;
+
+    float inputWindSpeed;
+    float inputWindAngle;
+    float inputWaterCurrentSpeed;
+    float inputWaterCurrentAngle;
+    float inputWaveHeight[5];
   };
 
-  struct MyCustomSignalStructureOutput {
-    double outputHullPosition[6];
-    double outputAntenna1Position[3];
-    double outputAntenna2Position[3];
-    double ouputVelocitySpeed;
-    double outputVelocityAngle;
-    double outputAccelerationLinear[3];
-    double outputVelocityAngular[3];
+  struct DDSOutput {
+    float outputHullPosition[6];
+    float outputAntenna1Position[3];
+    float outputAntenna2Position[3];
+    float ouputVelocitySpeed;
+    float outputVelocityAngle;
+    float outputAccelerationLinear[3];
+    float outputVelocityAngular[3];
   };
 
 };

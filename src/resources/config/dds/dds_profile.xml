@@ -52,8 +52,8 @@
     Here we atempt to bind our custom DDS topic from the FMU
   -->
 
-  <topic profile_name="MyCustomDDSFMUTopicInput" />
-  <data_writer profile_name="MyCustomDDSFMUTopicInput">
+  <topic profile_name="DDSInput" />
+  <data_writer profile_name="DDSInput">
     <qos>
       <reliability>
         <kind>RELIABLE</kind>
@@ -61,8 +61,8 @@
     </qos>
   </data_writer>
 
-  <topic profile_name="MyCustomDDSFMUTopicOutput" />
-  <data_reader profile_name="MyCustomDDSFMUTopicOutput">
+  <topic profile_name="DDSOutput" />
+  <data_reader profile_name="DDSOutput">
     <qos>
       <reliability>
         <kind>RELIABLE</kind>

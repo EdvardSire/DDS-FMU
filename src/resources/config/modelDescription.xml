@@ -4,7 +4,7 @@
     fmiVersion="2.0"
     modelName="dds-communication"
     description="DDS-FMI allows comunication and interaction with other FMUs using DDS, meaning any system or computer using DDS can interface and control these FMUs"
-    author="Martynas Smilingis"
+    author="Edvard Sire"
     copyright="DNV"
     license="MIT"
     version="0.5.1" 
